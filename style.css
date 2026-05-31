@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: radial-gradient(circle at top left, #4a55ff 0%, #090b26 50%, #03050f 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    color: #f4f7ff;
+}
+body::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 15%),
+                      radial-gradient(circle at 80% 30%, rgba(112,214,255,0.16), transparent 14%),
+                      radial-gradient(circle at 50% 80%, rgba(255,163,92,0.14), transparent 18%);
+    pointer-events: none;
+    z-index: 0;
+}
+.form_section{
+    position: relative;
+    z-index: 1;
+    width: min(100%, 520px);
+    padding: 36px 32px;
+    border-radius: 32px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    backdrop-filter: blur(18px);
+    overflow: hidden;
+}
+h2{
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+}
+.subtitle{
+    margin-bottom: 32px;
+    color: rgba(244,247,255,0.78);
+    line-height: 1.6;
+}
+form{
+    width: 100%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    display: grid;
+    gap: 1.2rem;
+}
+table tr{
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+table tr:last-child{
+    margin-bottom: 0;
+}
+table tr td{
+    padding: 0;
+}
+label{
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-weight: 700;
+    color: #dbe5ff;
+}
+.label-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.14);
+    color: #70d6ff;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+input,
+textarea{
+    width: 100%;
+    padding: 16px 14px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: #eef2ff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+input:focus,
+textarea:focus{
+    border-color: rgba(112,214,255,0.8);
+    box-shadow: 0 0 0 8px rgba(112,214,255,0.08);
+    transform: translateY(-1px);
+}
+textarea{
+    min-height: 140px;
+    resize: vertical;
+}
+.error-message{
+    color: #ffb3b3;
+    font-size: 0.88rem;
+    margin-top: 0.35rem;
+    min-height: 1.2rem;
+}
+.input-error{
+    border-color: #ff7a7a !important;
+    box-shadow: 0 0 0 6px rgba(255,122,122,0.12);
+}
+button{
+    width: min(170px, 47%);
+    min-width: 130px;
+    max-width: 190px;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.18);
+}
+.submit-btn{
+    background: linear-gradient(135deg, #78d1ff, #4d73ff 62%);
+    color: #08102c;
+}
+.reset-btn{
+    background: rgba(255,255,255,0.12);
+    color: #e7f1ff;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+.reset-btn:hover{
+    opacity: 0.92;
+}
+table tr:last-child{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.4rem;
+    flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+    .form_section{
+        padding: 28px 22px;
+    }
+    table tr{
+        grid-template-columns: 1fr;
+    }
+    table tr:last-child{
+        justify-content: center;
+        gap: 0.85rem;
+    }
+}
+@media (min-width: 641px) and (max-width: 900px) {
+    .form_section{
+        width: min(100%, 540px);
+    }
+}
+@media (min-width: 901px) {
+    .form_section{
+        width: min(100%, 520px);
+    }
+}
